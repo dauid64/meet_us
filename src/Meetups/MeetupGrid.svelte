@@ -1,7 +1,7 @@
 <script>
-    import MeetUpItem from './MeetupItem.svelte'
+    import MeetUpItem from './MeetupItem.svelte';
 
-    export let meetups
+    export let meetups;
 </script>
 
 <style>

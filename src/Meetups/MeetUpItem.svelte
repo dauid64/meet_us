@@ -1,11 +1,14 @@
 <script>
-    export let title;
-    export let subtitle;
-    export let imageUrl;
-    export let description;
-    export let address;
-    export let email
+  import Button from "../UI/Button.svelte";
+
+  export let title;
+  export let subtitle;
+  export let imageUrl;
+  export let description;
+  export let address;
+  export let email
 </script>
+
 <style>
       article {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
@@ -58,24 +61,28 @@
   div {
     text-align: right;
   }
+
+  .content {
+    height: 4rem;
+  }
 </style>
 
 <article>
-    <header>
-        <h1>{title}</h1>
-        <h2>{subtitle}</h2>
-        <p>{address}</p>
-    </header>
-    <div class="image">
-        <img src="{imageUrl}" alt="{title}">
-    </div>
-    <div class="content">
-        <p>{description}</p>
-    </div>
-    <footer>
-        <!-- svelte-ignore a11y-missing-content -->
-        <a href="mailto:{email}">Contact</a>
-        <button>Show Details</button>
-        <button>Favorite</button>
-    </footer>
+  <header>
+      <h1>{title}</h1>
+      <h2>{subtitle}</h2>
+      <p>{address}</p>
+  </header>
+  <div class="image">
+      <img src="{imageUrl}" alt="{title}">
+  </div>
+  <div class="content">
+      <p>{description}</p>
+  </div>
+  <footer>
+      <!-- svelte-ignore a11y-missing-content -->
+      <Button href="mailto:{email}" caption="Contact"/>
+      <Button mode="outline" type="button" caption="Show Details"/>
+      <Button type="button" caption="Favorite"/>
+  </footer>
 </article>
