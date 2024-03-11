@@ -52,7 +52,7 @@
         <TextInput id="address" label="Address" value={address} on:input="{(event) => address = event.target.value}" type="text" valid={addressValid} validityMessage="Please enter a valid address."/>
         <TextInput id="imageUrl" label="Image URL" value={imageUrl} on:input="{(event) => imageUrl = event.target.value}" type="text" valid={imageUrlValid} validityMessage="Please enter a valid image URL."/>
         <TextInput id="email" label="E-mail" value={email} on:input="{(event) => email = event.target.value}" type="email" valid={emailValid} validityMessage="Please enter a valid e-mail."/>
-        <TextInput id="description" label="Description" value={description} on:input="{(event) => description = event.target.value}" controlType="textarea" valid={descriptionValid} validityMessage="Please enter a valid description."/>
+        <TextInput id="description" label="Description" bind:value={description} controlType="textarea" valid={descriptionValid} validityMessage="Please enter a valid description."/>
     </form>
     <div slot="footer">
         <Button type="button" mode="outline" on:click={cancel}>Cancel</Button>
